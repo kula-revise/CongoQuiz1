@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Congo under Mobutu | What you know already | Kula Revise</title>
+<style>
+  :root {
+    --sand: #F2E9D9; --paper: #FBF6EB; --cut: #FFFCF4; --ink: #1B2A33;
+    --copper: #B4622D; --malachite: #1F6B58; --clay: #8C4A2F; --fade: #7B7263;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    background:
+      repeating-linear-gradient(90deg, rgba(27,42,51,0.028) 0 1px, transparent 1px 5px),
+      radial-gradient(ellipse at top right, rgba(180,98,45,0.10) 0%, transparent 58%),
+      radial-gradient(ellipse at bottom left, rgba(31,107,88,0.09) 0%, transparent 58%),
+      var(--sand);
+    padding: 2rem 1rem 3rem;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--ink); line-height: 1.55; -webkit-text-size-adjust: 100%;
+  }
+  .container { max-width: 780px; margin: 0 auto; }
+  .header-block { text-align: center; margin-bottom: 2rem; padding: 1.4rem 0 1.2rem; position: relative; }
+  .header-block::before {
+    content: ""; position: absolute; z-index: 0; top: 0; left: 50%; transform: translateX(-50%);
+    width: 260px; height: 92px; pointer-events: none;
+    background: repeating-radial-gradient(circle at 50% 100%, rgba(180,98,45,0.30) 0 2px, transparent 2px 15px);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 92%);
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 92%);
+  }
+  .eyebrow { position: relative; z-index: 1; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--clay); font-weight: 700; margin-bottom: 0.9rem; }
+  .masthead { position: relative; z-index: 1; font-size: clamp(2.2rem,6.4vw,3.4rem); font-weight: 800; line-height: 1.04; letter-spacing: -0.025em; }
+  .sub { position: relative; z-index: 1; font-size: 1rem; color: var(--fade); margin-top: 0.6rem; }
+  .rule { width: 86px; height: 9px; margin: 1.5rem auto 0;
+    background:
+      radial-gradient(circle at 9px 4.5px, var(--copper) 0 4px, transparent 4.5px),
+      radial-gradient(circle at 43px 4.5px, var(--copper) 0 4px, transparent 4.5px),
+      radial-gradient(circle at 77px 4.5px, var(--copper) 0 4px, transparent 4.5px); }
+  .intro-box { background: var(--paper); border: 1px solid rgba(27,42,51,0.12); border-left: 5px solid var(--malachite); padding: 1.4rem 1.6rem; margin-bottom: 2rem; }
+  .intro-label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--malachite); font-weight: 700; margin-bottom: 0.6rem; }
+  .intro-text { line-height: 1.68; font-size: 1rem; }
+  .key-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; margin-bottom: 2.2rem; }
+  .key-item { display: flex; flex-direction: column; gap: 0.45rem; padding: 0.85rem; background: var(--paper); border: 1px solid rgba(27,42,51,0.1); }
+  .chip { display: inline-block; padding: 0.22rem 0.7rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; width: fit-content; }
+  .chip-recall { background: #E7D6C4; color: #7B3F1C; }
+  .chip-understand { background: #D6E3DB; color: #1B5445; }
+  .chip-apply { background: var(--ink); color: #F0E3CF; }
+  .key-desc { font-size: 0.83rem; color: var(--fade); }
+  .sections-label { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--fade); text-align: center; margin-bottom: 1.2rem; font-weight: 700; }
+  .primary-btn { width: 100%; display: flex; align-items: center; gap: 1rem; padding: 1.3rem 1.5rem; background: var(--ink); color: #F4EADA; border: none; cursor: pointer; font-family: inherit; text-align: left; transition: all 0.2s; margin-bottom: 1rem; }
+  .primary-btn:hover { background: #12202a; transform: translateX(4px); }
+  .btn-num { font-size: 1.4rem; color: var(--copper); font-weight: 800; min-width: 35px; }
+  .btn-txt { flex: 1; display: flex; flex-direction: column; gap: 0.2rem; }
+  .btn-title { font-size: 1.15rem; font-weight: 700; }
+  .btn-sub { font-size: 0.82rem; color: #cbb9a0; }
+  .btn-arrow { font-size: 1.3rem; color: var(--copper); }
+  .section-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .section-btn { display: flex; align-items: center; gap: 1rem; padding: 0.95rem 1.1rem; background: transparent; border: 1px solid rgba(27,42,51,0.2); cursor: pointer; font-family: inherit; text-align: left; transition: all 0.2s; color: var(--ink); }
+  .section-btn:hover { background: var(--paper); border-color: var(--copper); }
+  .section-roman { color: var(--copper); font-weight: 800; min-width: 35px; font-size: 0.95rem; }
+  .section-name { flex: 1; font-size: 0.95rem; }
+  .section-count { font-size: 0.78rem; color: var(--fade); letter-spacing: 0.05em; }
+  .footer { text-align: center; font-size: 0.79rem; color: var(--fade); margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(27,42,51,0.14); line-height: 1.6; }
+
+  .quiz-top { margin-bottom: 1.5rem; }
+  .quiz-eyebrow { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--malachite); font-weight: 700; margin-bottom: 0.55rem; gap: 1rem; }
+  .quiz-progress { color: var(--fade); font-weight: 500; letter-spacing: 0.04em; text-transform: none; }
+  .progress-track { height: 3px; background: rgba(27,42,51,0.12); overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--copper); transition: width 0.35s ease; }
+  .quiz-card { background: var(--paper); border: 1px solid rgba(27,42,51,0.12); border-left: 5px solid var(--copper); padding: 1.7rem 1.5rem; margin-bottom: 1.3rem; }
+  .quiz-meta { display: flex; gap: 0.6rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; }
+  .section-tag { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay); font-weight: 700; }
+  .question-text { font-size: 1.24rem; line-height: 1.4; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 1.3rem; }
+  .options { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.2rem; }
+  .option-btn { display: flex; align-items: flex-start; gap: 0.85rem; padding: 1rem 1.05rem; background: var(--sand); border: 1px solid rgba(27,42,51,0.13); cursor: pointer; font-family: inherit; text-align: left; font-size: 0.97rem; line-height: 1.55; color: var(--ink); transition: all 0.18s; width: 100%; }
+  .option-btn:hover:not(:disabled) { background: var(--cut); border-color: var(--copper); }
+  .option-btn:disabled { cursor: default; }
+  .option-btn.selected { background: var(--cut); border-color: var(--copper); border-width: 2px; padding: 0.94rem 0.99rem; }
+  .option-btn.correct { background: #E2EDE4; border-color: var(--malachite); border-width: 2px; padding: 0.94rem 0.99rem; }
+  .option-btn.wrong { background: #F2DDD3; border-color: var(--clay); border-width: 2px; padding: 0.94rem 0.99rem; }
+  .option-btn.dimmed { opacity: 0.48; }
+  .opt-letter { font-weight: 800; color: var(--copper); min-width: 1.1rem; }
+  .opt-text { flex: 1; }
+  .opt-mark { font-weight: 700; font-size: 1.1rem; }
+  .explanation { background: var(--cut); border: 1px solid rgba(27,42,51,0.12); border-left: 5px solid var(--malachite); padding: 1.15rem 1.2rem; margin-bottom: 0.3rem; }
+  .expl-label { font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--malachite); font-weight: 700; margin-bottom: 0.5rem; }
+  .expl-text { line-height: 1.68; font-size: 0.95rem; }
+  .quiz-actions { display: flex; justify-content: space-between; gap: 0.8rem; margin-top: 1.2rem; }
+  .secondary-btn { padding: 0.8rem 1.2rem; background: transparent; border: 1px solid rgba(27,42,51,0.28); color: var(--ink); font-family: inherit; font-size: 0.92rem; font-weight: 600; cursor: pointer; }
+  .secondary-btn:hover:not(:disabled) { background: var(--paper); }
+  .secondary-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+  .primary-btn-small { padding: 0.85rem 1.5rem; background: var(--malachite); border: none; color: #F7F1E4; font-family: inherit; font-size: 0.95rem; cursor: pointer; font-weight: 700; }
+  .primary-btn-small:hover:not(:disabled) { background: #164C3F; }
+  .primary-btn-small:disabled { opacity: 0.35; cursor: not-allowed; }
+  .quiz-foot { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .link-btn { background: transparent; border: none; color: var(--fade); font-family: inherit; font-size: 0.85rem; cursor: pointer; text-decoration: underline; }
+  .score-tally { font-size: 0.82rem; color: var(--fade); font-weight: 600; }
+
+  .score-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.9rem; margin-bottom: 1.4rem; }
+  .score-block { background: var(--paper); border: 1px solid rgba(27,42,51,0.12); border-top: 4px solid var(--copper); padding: 1.3rem 0.8rem; text-align: center; }
+  .score-num { font-size: 2.6rem; font-weight: 800; color: var(--ink); line-height: 1; letter-spacing: -0.03em; }
+  .score-num.red { color: var(--clay); }
+  .score-den { font-size: 1.1rem; color: var(--fade); font-weight: 500; }
+  .score-label { font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fade); margin-top: 0.5rem; font-weight: 700; }
+  .compare-line { text-align: center; font-weight: 700; color: var(--malachite); background: var(--paper); border: 1px solid rgba(31,107,88,0.25); padding: 0.9rem 1rem; margin-bottom: 1.5rem; }
+  .score-word { font-size: 1.3rem; font-weight: 800; color: var(--clay); line-height: 2; letter-spacing: -0.01em; }
+  .grade-desc { text-align: center; margin-bottom: 1.6rem; padding: 0 0.5rem; line-height: 1.65; }
+  .breakdown { background: var(--paper); border: 1px solid rgba(27,42,51,0.12); padding: 1.3rem; margin-bottom: 1.4rem; }
+  .breakdown-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--malachite); font-weight: 700; margin-bottom: 1rem; text-align: center; }
+  .breakdown-row { display: grid; grid-template-columns: 1fr 96px 44px; gap: 0.7rem; align-items: center; margin-bottom: 0.7rem; font-size: 0.86rem; }
+  .breakdown-name { font-weight: 600; }
+  .breakdown-bar { height: 9px; background: rgba(27,42,51,0.08); overflow: hidden; }
+  .breakdown-fill { height: 100%; background: var(--copper); transition: width 0.4s; }
+  .breakdown-score { color: var(--fade); text-align: right; font-weight: 700; }
+  .review-all-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fade); font-weight: 700; margin-bottom: 1rem; text-align: center; }
+  .review-card { background: var(--paper); border: 1px solid rgba(27,42,51,0.12); padding: 1.1rem 1.2rem; margin-bottom: 0.8rem; border-left: 4px solid var(--fade); }
+  .review-card.got { border-left-color: var(--malachite); }
+  .review-card.missed { border-left-color: var(--clay); }
+  .review-q { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; line-height: 1.4; }
+  .review-a { font-size: 0.88rem; line-height: 1.55; margin-bottom: 0.3rem; }
+  .review-a .lab { font-weight: 700; }
+  .review-a.yours-wrong { color: var(--clay); }
+  .review-a.right { color: var(--malachite); }
+  .review-actions { margin-top: 1.6rem; }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- MENU -->
+  <div id="menu-screen">
+    <div class="header-block">
+      <div class="eyebrow">Kula Revise &middot; Grade 12 History &middot; The Congo</div>
+      <h1 class="masthead">The Congo under Mobutu</h1>
+      <div class="sub" id="masthead-sub">What you know already &middot; Before Lesson 1</div>
+      <div class="rule"></div>
+    </div>
+    <div class="intro-box">
+      <div class="intro-label">What this is for</div>
+      <p class="intro-text"><span id="intro-body"></span></p>
+    </div>
+    <div class="key-row">
+      <div class="key-item"><span class="chip chip-recall">Recall</span><span class="key-desc">The fact itself: a date, name or policy</span></div>
+      <div class="key-item"><span class="chip chip-understand">Understand</span><span class="key-desc">What the fact means or why it happened</span></div>
+      <div class="key-item"><span class="chip chip-apply">Apply</span><span class="key-desc">Spot what is wrong with a claim</span></div>
+    </div>
+    <div>
+      <div class="sections-label">&mdash; Choose your test &mdash;</div>
+      <button class="primary-btn" data-filter="all">
+        <span class="btn-num">I.</span>
+        <span class="btn-txt"><span class="btn-title">Full check</span><span class="btn-sub">All 18 questions &middot; all five sections</span></span>
+        <span class="btn-arrow">&rarr;</span>
+      </button>
+      <div class="section-list" id="section-list"></div>
+    </div>
+    <div class="footer">A recall check for an essay topic. The Congo is examined as Paper 1 Question 5, so it carries the knowledge check only. The source and skills examination belongs to the source-based topics.</div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="quiz-screen" class="hidden">
+    <div class="quiz-top">
+      <div class="quiz-eyebrow"><span id="quiz-section-name"></span><span class="quiz-progress" id="quiz-progress"></span></div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width: 0%"></div></div>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-meta"><span class="section-tag" id="section-tag"></span><span class="chip" id="difficulty-chip"></span></div>
+      <h2 class="question-text" id="question-text"></h2>
+      <div class="options" id="options-container"></div>
+      <div class="explanation hidden" id="explanation"><div class="expl-label">Why</div><div class="expl-text" id="expl-text"></div></div>
+      <div class="quiz-actions">
+        <button class="secondary-btn" id="prev-btn">&larr; Previous</button>
+        <button class="primary-btn-small" id="action-btn">Submit answer</button>
+      </div>
+    </div>
+    <div class="quiz-foot">
+      <button class="link-btn" id="exit-btn">Exit to menu</button>
+      <span class="score-tally" id="score-tally">Score so far: 0 / 0</span>
+    </div>
+  </div>
+
+  <!-- REVIEW -->
+  <div id="review-screen" class="hidden">
+    <div class="header-block">
+      <div class="eyebrow">Test report</div>
+      <h1 class="masthead" style="font-size: clamp(1.9rem,5vw,2.8rem);">Where you stand</h1>
+      <div class="rule"></div>
+    </div>
+    <div class="score-row">
+      <div class="score-block"><div class="score-num"><span id="score-correct">0</span><span class="score-den">/<span id="score-total">0</span></span></div><div class="score-label">Correct</div></div>
+      <div class="score-block"><div class="score-num"><span id="score-percent">0</span><span class="score-den">%</span></div><div class="score-label">Accuracy</div></div>
+      <div class="score-block"><div class="score-word" id="score-grade">-</div><div class="score-label">Band</div></div>
+    </div>
+    <div class="grade-desc" id="grade-desc"></div>
+    <p class="compare-line hidden" id="compare-line"></p>
+    <div class="breakdown"><div class="breakdown-label">By tier</div><div id="level-rows"></div></div>
+    <div class="breakdown"><div class="breakdown-label">By section</div><div id="breakdown-rows"></div></div>
+    <div><div class="review-all-label">Every question</div><div id="review-cards"></div></div>
+    <div class="review-actions">
+      <button class="primary-btn" id="restart-btn"><span class="btn-txt"><span class="btn-title">Return to menu</span><span class="btn-sub">Try another section or retake the full test</span></span><span class="btn-arrow">&#8635;</span></button>
+    </div>
+  </div>
+</div>
+
+<script>
+const MODE = "a";
+const SECTIONS = ["The Colonial Inheritance and the Crisis", "Mobutu Takes Power", "The Economy: Nationalisation and Zairianisation", "Authenticite and One-Party Rule", "The Reckoning and the Verdict"];
+const QUESTIONS = [
+  {
+    "id": 1,
+    "slot": 1,
+    "section": "The Colonial Inheritance and the Crisis",
+    "tier": "Recall",
+    "question": "On what date did the Congo become independent from Belgium?",
+    "options": [
+      "30 June 1960",
+      "24 November 1965",
+      "17 January 1961",
+      "1 January 1967"
+    ],
+    "correct": 0,
+    "explanation": "The Congo became independent on 30 June 1960. The other dates all belong to this unit: 24 November 1965 is Mobutu's second coup, 17 January 1961 is Lumumba's murder, and 1 January 1967 is the nationalisation of the copper industry. Getting them in order is half the battle."
+  },
+  {
+    "id": 2,
+    "slot": 2,
+    "section": "The Colonial Inheritance and the Crisis",
+    "tier": "Recall",
+    "question": "Which one word best describes Belgian colonial policy in the Congo?",
+    "options": [
+      "Paternalism",
+      "Assimilation",
+      "Federalism",
+      "Segregation"
+    ],
+    "correct": 0,
+    "explanation": "Paternalism: the belief that Congolese people should be looked after like children and given no say in government. This is the root of the whole essay, because it is why almost nobody had been trained to run the country by 1960."
+  },
+  {
+    "id": 3,
+    "slot": 3,
+    "section": "The Colonial Inheritance and the Crisis",
+    "tier": "Understand",
+    "question": "Why did the Force Publique mutiny days after independence in July 1960?",
+    "options": [
+      "Because every officer was still Belgian and independence changed nothing for the soldiers",
+      "Because the soldiers wanted the Belgian king to remain as their head of state",
+      "Because Lumumba had ordered them to attack the breakaway province of Katanga",
+      "Because their pay had been cut by the new Congolese government in Leopoldville"
+    ],
+    "correct": 0,
+    "explanation": "The army's officers were all still Belgian, so for the soldiers independence had changed nothing. When their commander wrote 'Before Independence = After Independence' on a blackboard, they mutinied. That collapse opened the door to the Belgian troop return and the Katangese secession."
+  },
+  {
+    "id": 4,
+    "slot": 4,
+    "section": "The Colonial Inheritance and the Crisis",
+    "tier": "Understand",
+    "question": "Why did Katanga's secession in July 1960 threaten the survival of the whole state?",
+    "options": [
+      "Because the province supplied about half of the country's revenue",
+      "Because the province held the capital city of Leopoldville",
+      "Because most of the population of the Congo lived in Katanga",
+      "Because Katanga controlled the only route to the sea"
+    ],
+    "correct": 0,
+    "explanation": "Katanga held the copper, which gave it roughly half the country's revenue. A government that loses half its income cannot pay an army or an administration, so losing Katanga was not just a smaller map, it was a threat to the state's existence."
+  },
+  {
+    "id": 5,
+    "slot": 5,
+    "section": "The Colonial Inheritance and the Crisis",
+    "tier": "Apply",
+    "question": "A student writes: 'Mobutu ruled a stable, united Congo from the moment of independence in June 1960.' What is wrong?",
+    "options": [
+      "Mobutu did not rule in 1960, and those early years were chaos, not calm",
+      "Mobutu ruled in 1960, but the country was united and calm rather than divided then",
+      "Nothing is wrong, since Mobutu did rule a stable, united Congo from June 1960",
+      "Mobutu did become president in 1960, but the Congo never became independent at all"
+    ],
+    "correct": 0,
+    "explanation": "Two errors packed into one sentence. Mobutu did not rule in 1960: he intervened briefly that September, then seized power for good only in November 1965. And the early 1960s were the opposite of stable, with mutiny, two secessions and Lumumba's murder. The claim reverses the whole story."
+  },
+  {
+    "id": 6,
+    "slot": 6,
+    "section": "Mobutu Takes Power",
+    "tier": "Recall",
+    "question": "In what year did Mobutu seize power for the second time and keep it?",
+    "options": [
+      "1965",
+      "1960",
+      "1967",
+      "1971"
+    ],
+    "correct": 0,
+    "explanation": "24 November 1965. His first intervention was in September 1960, when he suspended both Kasavubu and Lumumba, but he did not hold on to power then. 1967 is the new constitution and the MPR; 1971 is the renaming to Zaire."
+  },
+  {
+    "id": 7,
+    "slot": 7,
+    "section": "Mobutu Takes Power",
+    "tier": "Recall",
+    "question": "What was the name of the single legal party Mobutu founded in 1967?",
+    "options": [
+      "The Popular Movement of the Revolution (MPR)",
+      "The Congolese National Movement of Patrice Lumumba (MNC)",
+      "The National Front for the Liberation of Angola (FNLA)",
+      "The Popular Movement for the Liberation of Angola (MPLA)"
+    ],
+    "correct": 0,
+    "explanation": "The Mouvement Populaire de la Revolution, the MPR. By 1970 it was the only legal party and every citizen was a member from birth. The MNC was Lumumba's earlier party; the FNLA and MPLA are Angolan movements, put here because they are easy to mix up under pressure."
+  },
+  {
+    "id": 8,
+    "slot": 8,
+    "section": "Mobutu Takes Power",
+    "tier": "Understand",
+    "question": "Why did Mobutu argue that 'in our African tradition there are never two chiefs'?",
+    "options": [
+      "To make one-man rule sound like a return to African custom rather than a modern dictatorship",
+      "To explain why the Congo needed a federal system with power shared between its many provinces",
+      "To justify bringing back the Belgian officials who had governed the colony in the years before 1960",
+      "To announce that from now on he would share the country's power equally with President Kasavubu"
+    ],
+    "correct": 0,
+    "explanation": "The claim dressed a modern one-man state as a return to tradition. Precolonial societies did have chiefs, but they also had councils and customs that limited them. Mobutu's state had no such check, so the appeal to 'tradition' was doing a job: making concentration of power look old and natural."
+  },
+  {
+    "id": 9,
+    "slot": 9,
+    "section": "Mobutu Takes Power",
+    "tier": "Apply",
+    "question": "A student writes: 'Mobutu's 98 per cent result in the 1970 election proves he was genuinely loved by nearly all Zairians.' What is the problem?",
+    "options": [
+      "He was the only candidate, so the result shows there was no real choice, not genuine support",
+      "The true result was actually far lower than 98 per cent, so the student has simply misquoted the figure",
+      "There is no problem at all, since a result of 98 per cent really does prove near-total genuine support",
+      "The election in question was actually held in 1965 rather than 1970, so the date is the real mistake"
+    ],
+    "correct": 0,
+    "explanation": "Mobutu was the only candidate, so 98 per cent cannot measure genuine support: there was nothing to choose. Some real support probably existed, since order was worth something after years of chaos, but a one-candidate result cannot show it. The figure and date are right; the reasoning is the error."
+  },
+  {
+    "id": 10,
+    "slot": 10,
+    "section": "The Economy: Nationalisation and Zairianisation",
+    "tier": "Recall",
+    "question": "Which Belgian company, which had financed the Katangese secession, did Mobutu nationalise in 1967?",
+    "options": [
+      "Union Miniere du Haut Katanga (UMHK)",
+      "The state mining company called Gecamines",
+      "The Societe Generale holding company",
+      "The Belgian oil firm called Petrofina"
+    ],
+    "correct": 0,
+    "explanation": "Union Miniere du Haut Katanga, nationalised on 1 January 1967. Gecamines is the state company that replaced it, so it is the successor, not the company taken over. Seizing UMHK answered a political problem and an economic one at once, since it had paid for the secession that nearly destroyed the state."
+  },
+  {
+    "id": 11,
+    "slot": 11,
+    "section": "The Economy: Nationalisation and Zairianisation",
+    "tier": "Recall",
+    "question": "What was Zairianisation, announced on 30 November 1973?",
+    "options": [
+      "The seizure of foreign-owned businesses and their transfer to Zairian nationals",
+      "The nationalisation of the copper mining industry by the state",
+      "The renaming of the country and its citizens with African names",
+      "The building of the Inga dam and a ten-year industrial plan"
+    ],
+    "correct": 0,
+    "explanation": "Zairianisation seized about two thousand foreign-owned businesses, farms and plantations without payment and handed them to Zairian nationals. Do not confuse it with nationalisation, which took the copper industry into state hands. The key difference is that Zairianised assets went to individuals, not the state."
+  },
+  {
+    "id": 12,
+    "slot": 12,
+    "section": "The Economy: Nationalisation and Zairianisation",
+    "tier": "Understand",
+    "question": "Why did Zairianisation fail to build up Zairian business, despite putting the economy in local hands?",
+    "options": [
+      "The businesses went to loyal officials and relatives who often stripped and abandoned them",
+      "The businesses were handed to experienced traders who charged prices that were too high",
+      "The foreign owners refused to leave and kept control of their businesses in secret",
+      "The state kept ownership of the businesses and ran them as government departments"
+    ],
+    "correct": 0,
+    "explanation": "The new owners were chosen for loyalty, not skill: relatives, ministers, party officials and army officers. Many sold the stock and walked away, so production fell. Ownership changed hands, but nothing was built, and that gap is the whole point."
+  },
+  {
+    "id": 13,
+    "slot": 13,
+    "section": "The Economy: Nationalisation and Zairianisation",
+    "tier": "Apply",
+    "question": "A student writes: 'Nationalisation and Zairianisation were the same policy, since both took the economy into state hands.' What is wrong?",
+    "options": [
+      "Zairianisation gave businesses to private individuals, not the state, so the two are different",
+      "Nationalisation gave the copper industry to private individuals, not the state",
+      "Nothing is wrong; both policies put the economy into state hands",
+      "Both policies actually left the economy in foreign hands, so neither was state control"
+    ],
+    "correct": 0,
+    "explanation": "They were not the same. Nationalisation took the copper industry into state ownership. Zairianisation handed private businesses to individuals close to Mobutu. Blur the two and you lose the argument, because the whole judgement rests on the difference between state control and personal handouts."
+  },
+  {
+    "id": 14,
+    "slot": 14,
+    "section": "Authenticite and One-Party Rule",
+    "tier": "Recall",
+    "question": "What did Mobutu rename the country in 1971?",
+    "options": [
+      "Zaire",
+      "The Congo Republic",
+      "Katanga",
+      "Kinshasa"
+    ],
+    "correct": 0,
+    "explanation": "The country and the river both became Zaire in 1971. Kinshasa was the new name for the capital, Leopoldville, from 1966, so it is a city, not the country. The renaming was part of the authenticite campaign."
+  },
+  {
+    "id": 15,
+    "slot": 15,
+    "section": "Authenticite and One-Party Rule",
+    "tier": "Recall",
+    "question": "What was 'authenticite'?",
+    "options": [
+      "A campaign to replace European names, dress and custom with African ones",
+      "A plan to nationalise all of the foreign-owned mining companies in Zaire",
+      "The policy of seizing foreign-owned businesses for loyal Zairian nationals",
+      "A building programme to put dams and roads right across the whole country"
+    ],
+    "correct": 0,
+    "explanation": "Authenticite promoted African names, dress such as the abacost, and customs over European ones. It is not the same as nationalisation (the copper) or Zairianisation (the businesses), which are separate policies this unit keeps distinct."
+  },
+  {
+    "id": 16,
+    "slot": 16,
+    "section": "Authenticite and One-Party Rule",
+    "tier": "Understand",
+    "question": "Why did Mobutu have four former ministers publicly executed in Kinshasa in 1966?",
+    "options": [
+      "To make everyone see what opposition would now cost",
+      "To satisfy a law requiring executions to be held in public",
+      "To prove that the courts were independent of his government",
+      "To mark the first anniversary of the country's independence"
+    ],
+    "correct": 0,
+    "explanation": "The executions were staged in public as a warning: opposition would be answered with force, not argument. It is the clearest early sign that the order Mobutu built rested on fear rather than on real support."
+  },
+  {
+    "id": 17,
+    "slot": 17,
+    "section": "The Reckoning and the Verdict",
+    "tier": "Apply",
+    "question": "A student writes: 'Mobutu's copper policy caused the 1997 collapse of his rule, so it falls inside a question about the 1960s.' What is wrong?",
+    "options": [
+      "1997 is far outside the 1960s the question asks about, so it earns nothing here",
+      "1997 falls inside the 1960s range, so the student is quite right to use it",
+      "The copper policy had nothing whatsoever to do with Mobutu losing his power",
+      "Mobutu did not lose power in 1997; he actually ruled right up until his death"
+    ],
+    "correct": 0,
+    "explanation": "The date fence is the trap. The essay question is bounded 'in the 1960s', and it does allow the 1970s outcomes of 1960s policies. But 1997, when Mobutu was finally overthrown, is far outside any reading of that range, so it earns nothing no matter how accurate. Watch the dates the question allows."
+  },
+  {
+    "id": 18,
+    "slot": 18,
+    "section": "The Reckoning and the Verdict",
+    "tier": "Understand",
+    "question": "By 1976 the government was inviting the former foreign owners back (retrocession). Why does this matter for the argument?",
+    "options": [
+      "Reversing the policy within three years admits it failed, which the copper crash cannot explain",
+      "It proves the copper price crash was the single real cause of the whole economic collapse in Zaire",
+      "It shows the foreign owners had never truly left the country and had kept control in secret all along",
+      "It shows Zairianisation had succeeded so well that Mobutu was confidently expanding it even further"
+    ],
+    "correct": 0,
+    "explanation": "Undoing your own flagship policy within three years is an admission of failure. And it is the one piece of evidence the copper crash cannot explain away, because low prices are a reason to hold on to assets, not hand them back. So the failure was in the policy, not just the world market."
+  }
+];
+
+const TIER_MAP = {
+  Recall: { cls: 'chip-recall', label: 'Recall' },
+  Understand: { cls: 'chip-understand', label: 'Understand' },
+  Apply: { cls: 'chip-apply', label: 'Apply' }
+};
+const LEVELS = ['Recall','Understand','Apply'];
+
+// MODE is baked at build time: 'a' = Check 1 (before), 'b' = Check 2 (after).
+const IS_AFTER = (typeof MODE !== 'undefined' && MODE === 'b');
+
+// Read an optional prior score passed by the platform: ?prior=N
+function priorScore(){
+  try {
+    const p = new URLSearchParams(window.location.search).get('prior');
+    if(p === null) return null;
+    const n = parseInt(p, 10);
+    return (Number.isFinite(n) && n >= 0 && n <= 18) ? n : null;
+  } catch(e){ return null; }
+}
+
+// Intro copy differs by sitting.
+document.getElementById('intro-body').textContent = IS_AFTER
+  ? 'You have worked through the lessons and the capstone. This is the same set of facts as the check you took at the start, asked from the other side, so it measures what stuck. Every question tells you why the answer is right, so a wrong answer is still a chance to fix something before the exam.'
+  : 'This checks recall: the dates, names and policies the essay is built from. Take it before Lesson 1. A low score here is the normal starting point, not a warning, so do not worry about the number. Every question tells you why the answer is right. Write your score down at the end so you can compare it after the capstone.';
+
+const state = { filter: 'all', list: [], current: 0, answers: {}, order: {} };
+
+const menu = document.getElementById('menu-screen');
+const quiz = document.getElementById('quiz-screen');
+const review = document.getElementById('review-screen');
+
+function roman(n){ const m=[[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']]; let r=''; for(const [v,s] of m){ while(n>=v){ r+=s; n-=v; } } return r; }
+
+function buildMenu(){
+  const list = document.getElementById('section-list');
+  list.innerHTML = '';
+  SECTIONS.forEach((sec, i) => {
+    const count = QUESTIONS.filter(q => q.section === sec).length;
+    const btn = document.createElement('button');
+    btn.className = 'section-btn';
+    btn.innerHTML = `<span class="section-roman">${roman(i+2)}.</span><span class="section-name">${sec}</span><span class="section-count">${count} Q</span>`;
+    btn.addEventListener('click', () => startQuiz(sec));
+    list.appendChild(btn);
+  });
+  document.querySelector('[data-filter="all"]').addEventListener('click', () => startQuiz('all'));
+}
+
+function startQuiz(filter){
+  state.filter = filter;
+  state.list = filter === 'all' ? QUESTIONS.slice() : QUESTIONS.filter(q => q.section === filter);
+  state.current = 0; state.answers = {}; state.order = {};
+  menu.classList.add('hidden'); review.classList.add('hidden'); quiz.classList.remove('hidden');
+  renderQuestion();
+}
+
+function shuffledOrder(q){
+  if(!state.order[q.id]){
+    const arr = q.options.map((_,i)=>i);
+    for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=arr[i]; arr[i]=arr[j]; arr[j]=t; }
+    state.order[q.id]=arr;
+  }
+  return state.order[q.id];
+}
+
+function renderQuestion(){
+  const q = state.list[state.current];
+  const answered = state.answers[q.id] !== undefined;
+  const diff = TIER_MAP[q.tier];
+  document.getElementById('quiz-section-name').textContent = state.filter === 'all' ? 'Full test' : q.section;
+  document.getElementById('quiz-progress').textContent = `Question ${state.current+1} of ${state.list.length}`;
+  document.getElementById('progress-fill').style.width = ((state.current+1)/state.list.length*100)+'%';
+  document.getElementById('section-tag').textContent = q.section;
+  const chip = document.getElementById('difficulty-chip');
+  chip.className = 'chip ' + diff.cls; chip.textContent = diff.label;
+  document.getElementById('question-text').textContent = q.question;
+
+  const order = shuffledOrder(q);
+  const cont = document.getElementById('options-container');
+  cont.innerHTML = '';
+  order.forEach((orig, pos) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    let mark = '';
+    if(answered){
+      btn.disabled = true;
+      if(orig === q.correct){ btn.classList.add('correct'); mark = '<span class="opt-mark">&#10003;</span>'; }
+      else if(orig === state.answers[q.id]){ btn.classList.add('wrong'); mark = '<span class="opt-mark">&#10007;</span>'; }
+      else btn.classList.add('dimmed');
+    }
+    btn.innerHTML = `<span class="opt-letter">${String.fromCharCode(65+pos)}</span><span class="opt-text">${q.options[orig]}</span>${mark}`;
+    if(!answered){ btn.addEventListener('click', () => { state.answers[q.id] = orig; renderQuestion(); }); }
+    cont.appendChild(btn);
+  });
+
+  const expl = document.getElementById('explanation');
+  if(answered){ expl.classList.remove('hidden'); document.getElementById('expl-text').textContent = q.explanation; }
+  else expl.classList.add('hidden');
+
+  document.getElementById('prev-btn').disabled = state.current === 0;
+  const action = document.getElementById('action-btn');
+  action.textContent = state.current === state.list.length - 1 ? 'See results' : 'Next question';
+  action.disabled = !answered;
+
+  let got = 0, done = 0;
+  state.list.forEach(x => { if(state.answers[x.id] !== undefined){ done++; if(state.answers[x.id]===x.correct) got++; } });
+  document.getElementById('score-tally').textContent = `Score so far: ${got} / ${done}`;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+document.getElementById('action-btn').addEventListener('click', () => {
+  if(state.current < state.list.length - 1){ state.current++; renderQuestion(); }
+  else showReview();
+});
+document.getElementById('prev-btn').addEventListener('click', () => { if(state.current>0){ state.current--; renderQuestion(); } });
+document.getElementById('exit-btn').addEventListener('click', () => { quiz.classList.add('hidden'); menu.classList.remove('hidden'); });
+document.getElementById('restart-btn').addEventListener('click', () => { review.classList.add('hidden'); menu.classList.remove('hidden'); });
+
+function weakestSection(){
+  let worst = SECTIONS[0], worstPct = 2;
+  SECTIONS.forEach(sec => {
+    const qs = state.list.filter(q => q.section === sec);
+    if(!qs.length) return;
+    const got = qs.filter(q => state.answers[q.id] === q.correct).length;
+    const p = got/qs.length;
+    if(p < worstPct){ worstPct = p; worst = sec; }
+  });
+  return worst;
+}
+
+function showReview(){
+  quiz.classList.add('hidden'); review.classList.remove('hidden');
+  const total = state.list.length;
+  let correct = 0;
+  state.list.forEach(q => { if(state.answers[q.id] === q.correct) correct++; });
+  const pct = total ? Math.round(correct/total*100) : 0;
+  document.getElementById('score-correct').textContent = correct;
+  document.getElementById('score-total').textContent = total;
+  document.getElementById('score-percent').textContent = pct;
+
+  // Word bands, not letters. Copy differs by sitting.
+  let band='', desc='';
+  const weakest = weakestSection();
+  if(IS_AFTER){
+    if(pct>=85){ band='Excellent'; desc='The facts have stuck. Your last step is to write the essay question out under timed conditions: one hour, three pages.'; }
+    else if(pct>=70){ band='Strong'; desc='Strong recall after the lessons. Look again at anything you missed, then write the essay out under time.'; }
+    else if(pct>=55){ band='Solid'; desc='A solid base. Your weakest area was ' + weakest + '. Go back to the lesson that covers it, then try the timed essay.'; }
+    else if(pct>=40){ band='Patchy'; desc='Some of it has stuck and some has not. Your weakest area was ' + weakest + '. Revisit that lesson, then take this again.'; }
+    else { band='Start again'; desc='The facts have not settled yet. Go back to the lessons, starting with ' + weakest + ', and work through them again before the exam.'; }
+  } else {
+    if(pct>=85){ band='Excellent'; desc='A strong start even before the lessons. Go to Lesson 1 and start turning these facts into an argument.'; }
+    else if(pct>=70){ band='Strong'; desc='You already know a lot of this. Go to Lesson 1, where you learn to use it.'; }
+    else if(pct>=55){ band='Solid'; desc='A decent base to build on. Go to Lesson 1 and start building the argument.'; }
+    else if(pct>=40){ band='Patchy'; desc='A normal starting point before studying a topic. Go to Lesson 1: that is exactly what it is for.'; }
+    else { band='Just starting'; desc='A low score before you have studied a topic is the normal place to begin, not a warning. Go straight to Lesson 1.'; }
+  }
+  document.getElementById('score-grade').textContent = band;
+  document.getElementById('grade-desc').textContent = desc;
+
+  // Check 1 tells the learner to note the score. Check 2 shows the comparison if we have it.
+  const cmp = document.getElementById('compare-line');
+  if(IS_AFTER){
+    const prior = priorScore();
+    if(prior !== null && state.filter === 'all'){
+      const diff = correct - prior;
+      const move = diff > 0 ? ('up ' + diff) : (diff < 0 ? ('down ' + (-diff)) : 'the same');
+      cmp.textContent = 'Before the lessons: ' + prior + ' out of 18. Now: ' + correct + ' out of 18. That is ' + move + '.';
+      cmp.classList.remove('hidden');
+    } else {
+      cmp.classList.add('hidden');
+    }
+  } else {
+    cmp.textContent = 'Write this score down. When you finish the capstone, the second check will compare against it.';
+    cmp.classList.remove('hidden');
+  }
+
+  const levelRows = document.getElementById('level-rows'); levelRows.innerHTML = '';
+  LEVELS.forEach(level => {
+    const qs = state.list.filter(q => q.tier === level);
+    if(!qs.length) return;
+    const got = qs.filter(q => state.answers[q.id] === q.correct).length;
+    const p = Math.round(got/qs.length*100);
+    levelRows.innerHTML += `<div class="breakdown-row"><div class="breakdown-name">${level}</div><div class="breakdown-bar"><div class="breakdown-fill" style="width:${p}%"></div></div><div class="breakdown-score">${got}/${qs.length}</div></div>`;
+  });
+
+  const rows = document.getElementById('breakdown-rows'); rows.innerHTML = '';
+  SECTIONS.forEach(sec => {
+    const qs = state.list.filter(q => q.section === sec);
+    if(!qs.length) return;
+    const got = qs.filter(q => state.answers[q.id] === q.correct).length;
+    const p = Math.round(got/qs.length*100);
+    rows.innerHTML += `<div class="breakdown-row"><div class="breakdown-name">${sec}</div><div class="breakdown-bar"><div class="breakdown-fill" style="width:${p}%"></div></div><div class="breakdown-score">${got}/${qs.length}</div></div>`;
+  });
+
+  const cards = document.getElementById('review-cards'); cards.innerHTML = '';
+  state.list.forEach((q, i) => {
+    const your = state.answers[q.id];
+    const right = your === q.correct;
+    const card = document.createElement('div');
+    card.className = 'review-card ' + (right ? 'got' : 'missed');
+    let inner = `<div class="review-q">${i+1}. ${q.question}</div>`;
+    if(right){
+      inner += `<div class="review-a right"><span class="lab">Correct:</span> ${q.options[q.correct]}</div>`;
+    } else {
+      inner += `<div class="review-a yours-wrong"><span class="lab">Your answer:</span> ${your!==undefined ? q.options[your] : 'not answered'}</div>`;
+      inner += `<div class="review-a right"><span class="lab">Correct:</span> ${q.options[q.correct]}</div>`;
+    }
+    card.innerHTML = inner;
+    cards.appendChild(card);
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+buildMenu();
+</script>
+</body>
+</html>
