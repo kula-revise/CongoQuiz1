@@ -7,7 +7,12 @@
 <style>
   :root {
     --sand: #F2E9D9; --paper: #FBF6EB; --cut: #FFFCF4; --ink: #1B2A33;
-    --copper: #B4622D; --malachite: #1F6B58; --clay: #8C4A2F; --fade: #7B7263;
+    --a1: #B4622D;         /* copper, accent one: nav, emphasis, option letters, progress */
+    --a2: #1F6B58;         /* malachite, accent two: earned, correct, band, breakdown */
+    --copper: var(--a1); --malachite: var(--a2);   /* aliases so existing rules inherit the split */
+    --clay: #8C4A2F; --fade: #7B7263;
+    --serif: Georgia, 'Times New Roman', serif;
+    --sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -18,8 +23,9 @@
       radial-gradient(ellipse at bottom left, rgba(31,107,88,0.09) 0%, transparent 58%),
       var(--sand);
     padding: 2rem 1rem 3rem;
-    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    color: var(--ink); line-height: 1.55; -webkit-text-size-adjust: 100%;
+    font-family: var(--serif);
+    color: var(--ink); line-height: 1.6; -webkit-text-size-adjust: 100%;
+    -webkit-user-select: none; user-select: none;
   }
   .container { max-width: 780px; margin: 0 auto; }
   .header-block { text-align: center; margin-bottom: 2rem; padding: 1.4rem 0 1.2rem; position: relative; }
@@ -30,48 +36,48 @@
     -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 92%);
     mask-image: linear-gradient(to bottom, #000 0%, transparent 92%);
   }
-  .eyebrow { position: relative; z-index: 1; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--clay); font-weight: 700; margin-bottom: 0.9rem; }
-  .masthead { position: relative; z-index: 1; font-size: clamp(2.2rem,6.4vw,3.4rem); font-weight: 800; line-height: 1.04; letter-spacing: -0.025em; }
+  .eyebrow { font-family: var(--sans); position: relative; z-index: 1; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--clay); font-weight: 700; margin-bottom: 0.9rem; }
+  .masthead { font-family: var(--sans); position: relative; z-index: 1; font-size: clamp(2.2rem,6.4vw,3.4rem); font-weight: 800; line-height: 1.04; letter-spacing: -0.025em; }
   .sub { position: relative; z-index: 1; font-size: 1rem; color: var(--fade); margin-top: 0.6rem; }
-  .rule { width: 86px; height: 9px; margin: 1.5rem auto 0;
+  .rule { width: 92px; height: 9px; margin: 1.6rem auto 0;
     background:
-      radial-gradient(circle at 9px 4.5px, var(--copper) 0 4px, transparent 4.5px),
-      radial-gradient(circle at 43px 4.5px, var(--copper) 0 4px, transparent 4.5px),
-      radial-gradient(circle at 77px 4.5px, var(--copper) 0 4px, transparent 4.5px); }
+      radial-gradient(circle at 9px 4.5px, var(--a1) 0 4px, transparent 4.5px),
+      radial-gradient(circle at 46px 4.5px, var(--a1) 0 4px, transparent 4.5px),
+      radial-gradient(circle at 83px 4.5px, var(--a1) 0 4px, transparent 4.5px); }
   .intro-box { background: var(--paper); border: 1px solid rgba(27,42,51,0.12); border-left: 5px solid var(--malachite); padding: 1.4rem 1.6rem; margin-bottom: 2rem; }
-  .intro-label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--malachite); font-weight: 700; margin-bottom: 0.6rem; }
+  .intro-label { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--malachite); font-weight: 700; margin-bottom: 0.6rem; }
   .intro-text { line-height: 1.68; font-size: 1rem; }
   .key-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; margin-bottom: 2.2rem; }
   .key-item { display: flex; flex-direction: column; gap: 0.45rem; padding: 0.85rem; background: var(--paper); border: 1px solid rgba(27,42,51,0.1); }
-  .chip { display: inline-block; padding: 0.22rem 0.7rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; width: fit-content; }
+  .chip { font-family: var(--sans); display: inline-block; padding: 0.22rem 0.7rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; width: fit-content; }
   .chip-recall { background: #E7D6C4; color: #7B3F1C; }
   .chip-understand { background: #D6E3DB; color: #1B5445; }
   .chip-apply { background: var(--ink); color: #F0E3CF; }
   .key-desc { font-size: 0.83rem; color: var(--fade); }
-  .sections-label { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--fade); text-align: center; margin-bottom: 1.2rem; font-weight: 700; }
-  .primary-btn { width: 100%; display: flex; align-items: center; gap: 1rem; padding: 1.3rem 1.5rem; background: var(--ink); color: #F4EADA; border: none; cursor: pointer; font-family: inherit; text-align: left; transition: all 0.2s; margin-bottom: 1rem; }
+  .sections-label { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--fade); text-align: center; margin-bottom: 1.2rem; font-weight: 700; }
+  .primary-btn { font-family: var(--sans); width: 100%; display: flex; align-items: center; gap: 1rem; padding: 1.3rem 1.5rem; background: var(--ink); color: #F4EADA; border: none; cursor: pointer; font-family: inherit; text-align: left; transition: all 0.2s; margin-bottom: 1rem; }
   .primary-btn:hover { background: #12202a; transform: translateX(4px); }
-  .btn-num { font-size: 1.4rem; color: var(--copper); font-weight: 800; min-width: 35px; }
+  .btn-num { font-family: var(--sans); font-size: 1.4rem; color: var(--copper); font-weight: 800; min-width: 35px; }
   .btn-txt { flex: 1; display: flex; flex-direction: column; gap: 0.2rem; }
-  .btn-title { font-size: 1.15rem; font-weight: 700; }
-  .btn-sub { font-size: 0.82rem; color: #cbb9a0; }
+  .btn-title { font-family: var(--sans); font-size: 1.15rem; font-weight: 700; }
+  .btn-sub { font-family: var(--sans); font-size: 0.82rem; color: #cbb9a0; }
   .btn-arrow { font-size: 1.3rem; color: var(--copper); }
   .section-list { display: flex; flex-direction: column; gap: 0.5rem; }
   .section-btn { display: flex; align-items: center; gap: 1rem; padding: 0.95rem 1.1rem; background: transparent; border: 1px solid rgba(27,42,51,0.2); cursor: pointer; font-family: inherit; text-align: left; transition: all 0.2s; color: var(--ink); }
   .section-btn:hover { background: var(--paper); border-color: var(--copper); }
-  .section-roman { color: var(--copper); font-weight: 800; min-width: 35px; font-size: 0.95rem; }
+  .section-roman { font-family: var(--sans); color: var(--copper); font-weight: 800; min-width: 35px; font-size: 0.95rem; }
   .section-name { flex: 1; font-size: 0.95rem; }
   .section-count { font-size: 0.78rem; color: var(--fade); letter-spacing: 0.05em; }
   .footer { text-align: center; font-size: 0.79rem; color: var(--fade); margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(27,42,51,0.14); line-height: 1.6; }
 
   .quiz-top { margin-bottom: 1.5rem; }
-  .quiz-eyebrow { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--malachite); font-weight: 700; margin-bottom: 0.55rem; gap: 1rem; }
+  .quiz-eyebrow { font-family: var(--sans); display: flex; justify-content: space-between; align-items: baseline; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--malachite); font-weight: 700; margin-bottom: 0.55rem; gap: 1rem; }
   .quiz-progress { color: var(--fade); font-weight: 500; letter-spacing: 0.04em; text-transform: none; }
   .progress-track { height: 3px; background: rgba(27,42,51,0.12); overflow: hidden; }
   .progress-fill { height: 100%; background: var(--copper); transition: width 0.35s ease; }
   .quiz-card { background: var(--paper); border: 1px solid rgba(27,42,51,0.12); border-left: 5px solid var(--copper); padding: 1.7rem 1.5rem; margin-bottom: 1.3rem; }
   .quiz-meta { display: flex; gap: 0.6rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; }
-  .section-tag { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay); font-weight: 700; }
+  .section-tag { font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay); font-weight: 700; }
   .question-text { font-size: 1.24rem; line-height: 1.4; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 1.3rem; }
   .options { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.2rem; }
   .option-btn { display: flex; align-items: flex-start; gap: 0.85rem; padding: 1rem 1.05rem; background: var(--sand); border: 1px solid rgba(27,42,51,0.13); cursor: pointer; font-family: inherit; text-align: left; font-size: 0.97rem; line-height: 1.55; color: var(--ink); transition: all 0.18s; width: 100%; }
@@ -103,9 +109,9 @@
   .score-num { font-size: 2.6rem; font-weight: 800; color: var(--ink); line-height: 1; letter-spacing: -0.03em; }
   .score-num.red { color: var(--clay); }
   .score-den { font-size: 1.1rem; color: var(--fade); font-weight: 500; }
-  .score-label { font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fade); margin-top: 0.5rem; font-weight: 700; }
+  .score-label { font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fade); margin-top: 0.5rem; font-weight: 700; }
   .compare-line { text-align: center; font-weight: 700; color: var(--malachite); background: var(--paper); border: 1px solid rgba(31,107,88,0.25); padding: 0.9rem 1rem; margin-bottom: 1.5rem; }
-  .score-word { font-size: 1.3rem; font-weight: 800; color: var(--clay); line-height: 2; letter-spacing: -0.01em; }
+  .score-word { font-family: var(--sans); font-size: 1.3rem; font-weight: 800; color: var(--a2); line-height: 2; letter-spacing: -0.01em; }
   .grade-desc { text-align: center; margin-bottom: 1.6rem; padding: 0 0.5rem; line-height: 1.65; }
   .breakdown { background: var(--paper); border: 1px solid rgba(27,42,51,0.12); padding: 1.3rem; margin-bottom: 1.4rem; }
   .breakdown-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--malachite); font-weight: 700; margin-bottom: 1rem; text-align: center; }
@@ -221,7 +227,7 @@ const QUESTIONS = [
       "1 January 1967"
     ],
     "correct": 0,
-    "explanation": "The Congo became independent on 30 June 1960. The other dates all belong to this topic: 1965 is Mobutu's coup, 1961 is Lumumba's murder, 1967 the copper nationalisation. Get the order wrong in an essay and you lose marks as your argument slips out of sequence."
+    "explanation": "The Congo became independent on 30 June 1960. The other dates all belong to this topic, which is why they tempt. 1965 is Mobutu's coup, 1961 is Lumumba's murder, 1967 the copper nationalisation. Only 1960 is independence itself."
   },
   {
     "id": 2,
@@ -236,7 +242,7 @@ const QUESTIONS = [
       "Segregation"
     ],
     "correct": 0,
-    "explanation": "Paternalism: treating grown people like children who cannot be trusted with responsibility. This is the root of your whole essay, because it is why almost nobody had been trained to run the country by 1960. Name it in an answer and you show the marker you understand the cause, not just the events."
+    "explanation": "Paternalism: treating grown people like children who can't be trusted with responsibility. It's the root of the whole story, because it's why almost nobody had been trained to run the country by 1960. Assimilation was the French approach, not the Belgian one."
   },
   {
     "id": 3,
@@ -251,7 +257,7 @@ const QUESTIONS = [
       "Because their pay had been cut by the new Congolese government in Leopoldville"
     ],
     "correct": 0,
-    "explanation": "Every officer was still Belgian, so for the soldiers independence changed nothing. Their commander wrote 'Before Independence = After Independence', and they mutinied. That collapse let the Belgian troops return and Katanga break away. Miss this trigger and you cannot explain the fast fall, which costs you in the exam."
+    "explanation": "Every officer was still Belgian, so for the soldiers independence had changed nothing. Their commander wrote 'Before Independence = After Independence', and they mutinied. That collapse let the Belgian troops return and Katanga break away days later."
   },
   {
     "id": 4,
@@ -266,7 +272,7 @@ const QUESTIONS = [
       "Because Katanga controlled the only route to the sea"
     ],
     "correct": 0,
-    "explanation": "Katanga held the copper, which gave it about half the country's revenue. A government that loses half its income cannot pay an army or run an administration. So losing Katanga threatened the state's survival, not just its map. Use that link and you turn a bare fact into an argument the marker rewards."
+    "explanation": "Katanga held the copper, which gave it about half the country's revenue. A government that loses half its income can't pay an army or run an administration. The capital option tempts, but the capital was Leopoldville, far from Katanga. The money was the danger."
   },
   {
     "id": 5,
@@ -281,7 +287,7 @@ const QUESTIONS = [
       "Mobutu did become president in 1960, but the Congo never became independent at all"
     ],
     "correct": 0,
-    "explanation": "Two errors are packed into one sentence. Mobutu did not rule in 1960: he intervened briefly that September, then took power for good only in November 1965. And the early 1960s were the opposite of stable. Spot both when you check a claim like this, because a marker plants exactly these traps."
+    "explanation": "Two things are wrong. Mobutu didn't rule in 1960: he stepped in briefly that September, then took power for good only in November 1965. And the early 1960s were the opposite of stable, full of mutiny, secession and murder. The claim reverses the whole story."
   },
   {
     "id": 6,
@@ -296,7 +302,7 @@ const QUESTIONS = [
       "1971"
     ],
     "correct": 0,
-    "explanation": "24 November 1965. His first move was in September 1960, when he suspended Kasavubu and Lumumba, but he did not hold power then. 1967 is the new constitution, 1971 the renaming to Zaire. Date the coup wrong and your timeline of his rule falls apart, which a marker notices at once."
+    "explanation": "24 November 1965. His first move was in September 1960, when he suspended Kasavubu and Lumumba, but he didn't hold power then. 1967 is tempting because a lot happened that year, the new constitution and the MPR, but the coup that made him ruler was 1965."
   },
   {
     "id": 7,
@@ -311,7 +317,7 @@ const QUESTIONS = [
       "The Popular Movement for the Liberation of Angola (MPLA)"
     ],
     "correct": 0,
-    "explanation": "The MPR, the Popular Movement of the Revolution. By 1970 it was the only legal party, and every citizen was a member from birth. The MNC was Lumumba's earlier party; the FNLA and MPLA are Angolan. Mix these up in an essay and you hand the marker an easy way to see you have confused your countries."
+    "explanation": "The MPR, the Popular Movement of the Revolution. By 1970 it was the only legal party, and every citizen was a member from birth. The MNC tempts because it's also Congolese, but that was Lumumba's earlier party, from before Mobutu took over."
   },
   {
     "id": 8,
@@ -326,7 +332,7 @@ const QUESTIONS = [
       "To announce that from now on he would share the country's power equally with President Kasavubu"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} is right: the claim dressed one-man rule as a return to tradition. Real precolonial societies had chiefs, but also councils and customs that limited them. Mobutu's state had no such check. Name what a justification is doing, rather than repeating it, and you earn the higher marks."
+    "explanation": "Option {opt0} is right: the claim dressed one-man rule as a return to tradition. Real precolonial societies had chiefs, but they also had councils and customs that held a chief in check. Mobutu's state had no such limit, so 'tradition' was doing a job here."
   },
   {
     "id": 9,
@@ -341,7 +347,7 @@ const QUESTIONS = [
       "The election in question was actually held in 1965 rather than 1970, so the date is the real mistake"
     ],
     "correct": 0,
-    "explanation": "Mobutu was the only candidate, so 98 per cent cannot measure real support: there was nothing to choose. Some genuine support probably existed, since order was worth something after the chaos. But a one-candidate result cannot show it. Treat a number like this as proof of popularity in the exam and you walk into the trap."
+    "explanation": "Mobutu was the only name on the ballot, so 98 per cent can't measure real support: there was nothing to choose. Some genuine support probably existed, since order was worth something after the chaos. But a one-name vote can't show it. The claim reads the number backwards."
   },
   {
     "id": 10,
@@ -356,7 +362,7 @@ const QUESTIONS = [
       "The Belgian oil firm called Petrofina"
     ],
     "correct": 0,
-    "explanation": "Union Miniere du Haut Katanga, nationalised on 1 January 1967. Gecamines is the state company that replaced it, so it is the successor, not the firm taken over. Taking over Union Miniere solved a political and an economic problem at once, since it had paid for the secession. Swap the two names and you lose the mark."
+    "explanation": "Union Miniere du Haut Katanga, nationalised on 1 January 1967. The Gecamines option is tempting, but Gecamines is the state company that replaced it, not the firm taken over. Union Miniere was seized; Gecamines was its replacement."
   },
   {
     "id": 11,
@@ -371,7 +377,7 @@ const QUESTIONS = [
       "The building of the Inga dam and a ten-year industrial plan"
     ],
     "correct": 0,
-    "explanation": "Zairianisation seized about two thousand foreign-owned businesses without payment and gave them to Zairian nationals. Do not confuse it with nationalisation, which took the copper into state hands. Zairianised assets went to individuals, not the state. Blur that in an essay and you lose the marks your economic argument depends on."
+    "explanation": "Zairianisation seized about two thousand foreign-owned businesses without payment and handed them to Zairian nationals. The nationalisation option tempts because both are seizures, but nationalisation took the copper into state hands. Zairianised assets went to individuals, not the state."
   },
   {
     "id": 12,
@@ -386,7 +392,7 @@ const QUESTIONS = [
       "The state kept ownership of the businesses and ran them as government departments"
     ],
     "correct": 0,
-    "explanation": "The new owners were chosen for loyalty, not skill: relatives, ministers and army officers. Many sold the stock and walked away, so production fell. Ownership changed hands, but nothing was built. State that gap plainly and you have the sharpest line in the essay, which earns you real marks."
+    "explanation": "The new owners were chosen for loyalty, not skill: relatives, ministers and army officers. Many sold the stock and walked away, so production fell. Ownership changed hands, but nothing was built, and that gap is the heart of it."
   },
   {
     "id": 13,
@@ -401,7 +407,7 @@ const QUESTIONS = [
       "Both policies actually left the economy in foreign hands, so neither was state control"
     ],
     "correct": 0,
-    "explanation": "They were not the same. Nationalisation took the copper industry into state ownership. Zairianisation handed private businesses to Mobutu's allies. Blur the two and you lose the argument, because the whole judgement rests on the difference between state control and personal handouts."
+    "explanation": "They weren't the same. Nationalisation took the copper industry into state ownership. Zairianisation handed private businesses to Mobutu's allies. The whole judgement rests on that difference, between the state owning something and a favourite pocketing it."
   },
   {
     "id": 14,
@@ -416,7 +422,7 @@ const QUESTIONS = [
       "Kinshasa"
     ],
     "correct": 0,
-    "explanation": "The country and the river both became Zaire in 1971. Kinshasa was the new name for the capital from 1966, so it is a city, not the country. The renaming was part of authenticite. If you name the country wrong, you throw away an easy mark that most learners collect without thinking."
+    "explanation": "The country and the river both became Zaire in 1971. The Kinshasa option is tempting, but Kinshasa was the new name for the capital from 1966, so it's a city, not the country. Zaire was the whole country."
   },
   {
     "id": 15,
@@ -431,7 +437,7 @@ const QUESTIONS = [
       "A building programme to put dams and roads right across the whole country"
     ],
     "correct": 0,
-    "explanation": "Authenticite promoted African names, dress such as the abacost, and custom over European ones. It is not nationalisation (the copper) or Zairianisation (the businesses). Keep the three policies apart in your essay, because a marker rewards the answer that names each one correctly and does not muddle them."
+    "explanation": "Authenticite promoted African names, dress such as the abacost, and custom over European ones. The nationalisation option tempts because it's from the same period, but that was the copper policy. Authenticite was about identity, not the economy."
   },
   {
     "id": 16,
@@ -446,7 +452,7 @@ const QUESTIONS = [
       "To mark the first anniversary of the country's independence"
     ],
     "correct": 0,
-    "explanation": "The executions were staged in public as a warning: opposition would be answered with force, not argument. It is the clearest early sign that the order Mobutu built rested on fear rather than real support. Use it in your second body paragraph, and a bare fact becomes evidence that earns marks."
+    "explanation": "The executions were staged in public as a warning: opposition would be answered with force, not argument. It's the clearest early sign that the order Mobutu built rested on fear rather than real support."
   },
   {
     "id": 17,
@@ -461,7 +467,7 @@ const QUESTIONS = [
       "Mobutu did not lose power in 1997; he actually ruled right up until his death"
     ],
     "correct": 0,
-    "explanation": "The date fence is the trap. The question is bounded 'in the 1960s', and it does allow the 1970s outcomes of 1960s policies. But 1997, when Mobutu was overthrown, is far outside that range, so it earns nothing however true it is. Watch the dates the question allows, or you waste writing on marks you cannot score."
+    "explanation": "1997 is the giveaway. The question is bounded 'in the 1960s', and it does allow the 1970s outcomes of 1960s policies. But 1997, when Mobutu was overthrown, is far outside that range, so it can't be used here however true it is."
   },
   {
     "id": 18,
@@ -476,7 +482,7 @@ const QUESTIONS = [
       "It shows Zairianisation had succeeded so well that Mobutu was confidently expanding it even further"
     ],
     "correct": 0,
-    "explanation": "Undoing your own flagship policy within three years is an admission of failure. It is the one fact the copper crash cannot explain, because low prices are a reason to hold assets, not hand them back. So the failure was in the policy, not just the world market. That distinction is where your best marks are."
+    "explanation": "Undoing your own flagship policy within three years is an admission it failed. It's the one fact the copper crash can't explain, because low prices are a reason to hold assets, not give them back. So the failure was in the policy, not just the world market."
   }
 ];
 
