@@ -147,15 +147,13 @@
   .hidden { display: none !important; }
 
 #kula-mode-toggle, .mode-toggle { min-height: 44px !important; padding-top: 0.6rem !important; padding-bottom: 0.6rem !important; box-sizing: border-box !important; }
-/* co-chkpick */
-.primary-btn, .primary-btn .btn-num, .primary-btn .btn-title, .primary-btn .btn-sub, .primary-btn .btn-arrow { color: #0c0e10 !important; }
 body:not(.dark) .section-btn, body:not(.dark) .section-btn .section-name, body:not(.dark) .section-name, body:not(.dark) .section-btn .section-count { color: #0c0e10 !important; }
 
 /* kdone completion pop */
-.kdone-back { position: fixed; inset: 0; background: var(--scrim, rgba(27,42,51,0.5)); display: flex; align-items: center; justify-content: center; padding: 1.2rem; z-index: 90; }
-.kdone { background: var(--paper, var(--sheet, var(--slab, #ffffff))); color: var(--ink, #1a1a1a); border: 1px solid var(--hair, rgba(128,128,128,0.28)); max-width: 26rem; width: 100%; padding: 1.4rem 1.3rem; text-align: center; }
-.kdone-label { font-family: var(--mono, ui-monospace, 'Cascadia Code', Consolas, monospace); font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink, #1a1a1a); font-weight: 600; margin-bottom: 0.5rem; opacity: 0.75; }
-.kdone p { font-size: 0.95rem; line-height: 1.6; color: var(--ink, #1a1a1a); margin: 0.5rem 0 1.1rem; }
+.kdone-back { position: fixed; inset: 0; background: rgba(8,16,28,0.72); display: flex; align-items: center; justify-content: center; padding: 1.2rem; z-index: 60; }
+.kdone { background: var(--sheet, var(--slab, var(--paper, #ffffff))); color: var(--ink, #1a1a1a); border-top: 3px solid var(--flame, var(--spray, var(--a2, var(--a1, #888888)))); max-width: 24rem; width: 100%; padding: 1.6rem 1.5rem 1.5rem; text-align: center; }
+.kdone-label { font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--leaf, var(--spray, var(--a2, var(--a1, #888888)))); font-weight: 600; margin-bottom: 0.7rem; }
+.kdone p { margin: 0 0 1.1rem; color: var(--ink, #1a1a1a); }
 .kdone .primary-btn { display: inline-flex; width: auto; }
 </style>
 </head>
@@ -480,7 +478,7 @@ const QUESTIONS = [
       "To mark the first anniversary of the country's independence"
     ],
     "correct": 0,
-    "explanation": "The executions were staged in public as a warning: opposition would be answered with force, not argument. It's the clearest early sign that the order Mobutu built rested on fear rather than real support."
+    "explanation": "The executions were staged in public as a warning: resistance would be answered with force, not argument. It's the clearest early sign that the order Mobutu built rested on fear rather than real support."
   },
   {
     "id": 17,
